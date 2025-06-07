@@ -20,6 +20,12 @@ jobs:
                 chmod +x ./ascii-shell.sh
                 ./ascii-shell.sh
 
+          - name: Upload Artifact
+            uses: actions/upload-artifact@4
+            with:
+                name: dragon-text-file
+                path: ./dragon.txt
+
           - name: End Message
             run: echo "See Ya!"
 
@@ -30,6 +36,10 @@ jobs:
           - name: List files
             run: ls -lrt
 
-
+          - name: Download Artifact
+            uses: actions/download-artifact@4
+            with:
+                name: dragon-text-file
+    
           - name: Read ASCII file
             run: cat dragon.txt
