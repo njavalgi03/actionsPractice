@@ -10,8 +10,13 @@ jobs:
           - name: Welcome Message
             run: echo "Hello,Ya Idiot!"
 
-          - name: List Files
-            run: ls
+          - name: List Files and Read files
+            run: |
+              ls
+              cat README.md
+
+          - name: Generate ASCII Artwork
+            run: cowsay -f dragon "I am Dragon tung tung tung sahuur"
 
           - name: End Message
             run: echo "See Ya!"
