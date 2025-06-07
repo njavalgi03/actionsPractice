@@ -19,3 +19,15 @@ jobs:
 
          - name: docker push
            run: echo docker push ${{env.CONTAINER_REG}}/${{env.DOCKER_USERNAME}}/${{env.IMAGE_NAME}}:latest
+
+    run-container:
+        runs-on: ubuntu-latest
+        timeout-minutes: 1
+        concurrency:
+            group: production
+            cancel-in-progress: true
+        steps:
+          - name: Run Container
+            run: |
+             echo docker run -p 8080:80 ${{env.CONTAINER_REG}}/${{env.DOCKER_USERNAME}}/${{env.IMAGE_NAME}}
+             sleep 120
