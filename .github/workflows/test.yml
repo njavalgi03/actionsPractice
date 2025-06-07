@@ -7,6 +7,9 @@ jobs:
           - name: Checkout Repo  
             uses: actions/checkout@v4
 
+          - name: Install Cowsay
+            run: sudo apt-get install -y cowsay
+
           - name: Welcome Message
             run: echo "Hello,Ya Idiot!"
 
@@ -16,7 +19,10 @@ jobs:
               cat README.md
 
           - name: Generate ASCII Artwork
-            run: cowsay -f dragon "I am Dragon tung tung tung sahuur"
+            run: cowsay -f dragon "I am Dragon tung tung tung sahuur" >> dragon.txt
+        
+          - name: List Dragon File
+            run: ls -lrt | grep dragon.txt
 
           - name: End Message
             run: echo "See Ya!"
