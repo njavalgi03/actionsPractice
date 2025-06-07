@@ -16,7 +16,8 @@ jobs:
               cat README.md
         
           - name: Execute shell file
-            run:
+            run: |
+                chmood +x ascii-shell.sh
                 ./ascii-shell.sh
 
           - name: End Message
