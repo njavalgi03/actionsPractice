@@ -11,4 +11,4 @@ jobs:
             run: ls
 
           - name: End Message
-            run: "See Ya!"
+            run: echo "See Ya!"
