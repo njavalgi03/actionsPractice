@@ -17,7 +17,7 @@ jobs:
         
           - name: Execute shell file
             run: |
-                chmod +x ./workflows/ascii-shell.sh
+                chmod +x ./ascii-shell.sh
                 ./ascii-shell.sh
 
           - name: End Message
