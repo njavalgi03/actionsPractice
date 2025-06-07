@@ -1,0 +1,14 @@
+name: My First Workflow
+on: push
+jobs:
+    first_job:
+        runs-on: linux
+        steps:
+          - name: Welcome Message
+            run: echo "Hello,Ya Idiot!"
+
+          - name: List Files
+            run: ls
+
+          - name: End Message
+            run: "See Ya!"
