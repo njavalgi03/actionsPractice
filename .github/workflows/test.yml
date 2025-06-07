@@ -22,3 +22,14 @@ jobs:
 
           - name: End Message
             run: echo "See Ya!"
+
+    second_job:
+        needs: first_job
+        runs-on: ubuntu-latest
+        steps:
+          - name: List files
+            run: ls -lrt
+
+
+          - name: Read ASCII file
+            run: cat dragon.txt
