@@ -21,7 +21,7 @@ jobs:
                 ./ascii-shell.sh
 
           - name: Upload Artifact
-            uses: actions/upload-artifact@4
+            uses: actions/upload-artifact@v4
             with:
                 name: dragon-text-file
                 path: ./dragon.txt
@@ -37,7 +37,7 @@ jobs:
             run: ls -lrt
 
           - name: Download Artifact
-            uses: actions/download-artifact@4
+            uses: actions/download-artifact@v4
             with:
                 name: dragon-text-file
     
